@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotoshop</title>
+    <link rel="stylesheet" href="./style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+</head>
+<body>
+	<table><tr>
+	<td style="width: 400px;">
+		<div class="functionCont">
+			<div class="fieldCont">
+				<label for="uploadImage" class="file-input">
+					<input id="uploadImage" type="file" accept="image/png, image/jpeg, image/jpg">
+				</label>
+			</div>
+			<br>
+			<fieldset class="filters">
+				<legend>RGB functions</legend>
+				<div class="fieldCont">
+					<span>Remove channel:</span>
+					<button id="removeRed">RED</button>
+					<button id="removeGreen">GREEN</button>
+					<button id="removeBlue">BLUE</button>
+				</div>
+				<div class="fieldCont">
+					<span>Red:</span>
+					<input type="range" id="slider0" class="slider" min="0" max="2" value="1" step="0.01">
+					<button id="buttonRed">CONFIRM</button>
+				</div>
+				<div class="fieldCont">
+					<span>Green:</span>
+					<input type="range" id="slider1" class="slider" min="0" max="2" value="1" step="0.01">
+					<button id="buttonGreen">CONFIRM</button>
+				</div>
+				<div class="fieldCont">
+					<span>Blue:</span>
+					<input type="range" id="slider2" class="slider" min="0" max="2" value="1" step="0.01">
+					<button id="buttonBlue">CONFIRM</button>
+				</div>
+			</fieldset>
+			<fieldset class="filters">
+				<legend>Processing</legend>
+				<div class="fieldCont">
+					<span>Threshold:</span>
+					<input type="range" id="sliderThreshold" class="slider" min="0" max="255" value="128">
+					<button id="buttonThreshold">CONFIRM</button>
+				</div>
+				<div class="fieldCont">
+					<span>Lighting:</span>
+					<input type="range" id="sliderLighting" class="slider" min="0.75" max="1.25" value="1" step="0.01">
+					<button id="buttonLighting">CONFIRM</button>
+				</div>
+			</fieldset>
+			<fieldset class="filters">
+				<legend>Filters</legend>
+				<div class="fieldCont">
+					<button onclick="grayscale()">GRAYSCALE</button>
+					<button onclick="box()">BOX</button>
+					<button onclick="gaussian()">GAUSS</button>
+					
+				</div>
+				<div class="fieldCont">
+					<button onclick="median()">MEDIAN</button>
+					<button onclick="sobel()">SOBEL</button>
+					<button onclick="laplace()">LAPLACE</button>
+				</div>
+				<div class="fieldCont">
+					
+					<button onclick="sharpening()">SHARPENING</button>
+					<button onclick="unsharpening()">UNSHARPENING</button>
+				</div>
+			</fieldset>
+			<div class="fieldCont">
+				<br>
+				<button id="undo">UNDO</button>
+				<button id="redo">REDO</button>
+			</div>
+		</div>
+		<div class="chartCont">
+            <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+        </div>
+	</td>
+	<td style="vertical-align: top; padding-left: 50px">
+		<div class="canvasCont">
+			<canvas id="canvas" width="400" height="400" style="border: 1px solid black; max-width:70vw; max-height:95vh;"></canvas>
+		</div>
+	</td>
+	</tr></table>
+
+	
+	<script src="./filters.js"></script>
+	<script src="./javascript.js"></script>
+	<script src="./chart.js"></script>
+
+</body>
+</html>

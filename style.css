@@ -1,0 +1,17 @@
+.filters {
+	width: 400px;
+}
+
+.canvasCont {
+	border: 1px;
+}
+
+.functionCont {
+	height: 60vh;
+}
+
+.fieldCont{
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
